@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: 'testwebapp'
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: sa
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=public
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.yaml
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+springdoc:
+  swagger-ui:
+    enabled: true
