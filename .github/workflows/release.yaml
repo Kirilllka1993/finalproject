@@ -12,14 +12,14 @@ jobs:
       - name: Checkout helm-charts
         uses: actions/checkout@v2
         with:
-          repository: kirillka1993/finalchartproject
+          repository: kirilllka1993/finalchartproject
           ref: main
           path: helm-charts
           token: ${{ secrets.CHART_PUBLISH_TOKEN }}
 
       - name: Publish the Helm chart
         id: publish-chart
-        uses: kirillka1993/finalproject@main
+        uses: kirilllka1993/finalproject@main
         with:
           charts_dir: "helm-charts"
           charts_url: "https://janedoe.github.io/helm-charts"
