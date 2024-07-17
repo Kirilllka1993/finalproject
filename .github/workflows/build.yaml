@@ -47,9 +47,9 @@ jobs:
 
     - name: Publish the Helm chart
       id: publish-chart
-      uses: Kirilllka1993/finalchartproject@main
+      uses: Kirilllka1993/finalproject@main
       with:
-        charts_dir: "helm-sources"
+        charts_dir: "helm-charts"
         charts_url: "https://kirilllka1993.github.io/finalchartproject"
 
     - name: Commit and push helm-charts
