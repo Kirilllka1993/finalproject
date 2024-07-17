@@ -1,18 +1,43 @@
-name: release-chart
+name: ci
+
 on:
   push:
     branches: [ "main" ]
 
 jobs:
-  release-chart:
+  buildx:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Publish Helm chart
-        uses: Kirilllka1993/finalproject@main
+
+      - name: Checkout helm-charts
+        uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          charts_dir: helm-charts
-          charts_url: https://kirilllka1993.github.io/finalchartproject
-          repository: Kirilllka1993/finalchartproject
-          branch: main
+          repository: kirillka1993/finalchartproject
+          ref: main
+          path: helm-charts
+          token: ${{ secrets.CHART_PUBLISH_TOKEN }}
+
+      - name: Publish the Helm chart
+        id: publish-chart
+        uses: kirillka1993/finalproject@main
+        with:
+          charts_dir: "helm-charts"
+          charts_url: "https://janedoe.github.io/helm-charts"
+#name: release-chart
+#on:
+#  push:
+#    branches: [ "main" ]
+#
+#jobs:
+#  release-chart:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: Publish Helm chart
+#        uses: Kirilllka1993/finalproject@main
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          charts_dir: helm-charts
+#          charts_url: https://kirilllka1993.github.io/finalchartproject
+#          repository: Kirilllka1993/finalchartproject
+#          branch: main
