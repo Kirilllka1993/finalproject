@@ -1,0 +1,34 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: 'testwebapp'
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: testweb
+    password: testweb
+    url: jdbc:mariadb://192.168.202.1:3306/testweb?currentSchema=testweb
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.yaml
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+springdoc:
+  swagger-ui:
+    enabled: true
+
+management:
+  endpoint:
+    prometheus:
+      enabled: true
+    loggers:
+      enabled: true
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  server:
+    port: 9080
