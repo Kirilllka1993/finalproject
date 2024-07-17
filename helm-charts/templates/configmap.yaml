@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-config
+  namespace: {{ .Values.namespace }}
+data:
+  #Java options
+  JAVA_TOOL_OPTIONS: "
+  -XX:MaxRAMPercentage=100.0
+  -XX:+UseContainerSupport"
+  #Spring application options
+  spring.profiles.active: {{ .Values.config.spring.profiles.active }}
+  spring.datasource.username: {{ .Values.config.spring.datasource.username }}
+  spring.datasource.password: {{ .Values.config.spring.datasource.password }}
+  spring.datasource.url: "{{ .Values.config.spring.datasource.url }}"
+
+  springdoc.swagger-ui.enabled: "{{ .Values.config.springdoc.swaggerUi.enabled }}"
+
+  management.server.port: "{{ .Values.deployment.actuator.port }}"
+  management.endpoint.loggers.enabled: "{{ .Values.config.management.endpoint.loggers.enabled }}"
+  management.endpoint.health.show-details: "{{ .Values.config.management.endpoint.health.showDetails }}"
+  management.endpoints.web.exposure.include: "{{ .Values.config.management.endpoints.web.exposure.include }}"

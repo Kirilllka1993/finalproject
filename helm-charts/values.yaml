@@ -1,0 +1,51 @@
+namespace: project
+image:
+  repository: jfrog.it-academy.by/public/kazimirov
+  tag: testweb
+  pullPolicy: IfNotPresent
+deployment:
+  replicas: 1
+  port: 8080
+  pullPolicy: Always
+  resources:
+    limits:
+      cpu: '1'
+      memory: '400Mi'
+    requests:
+      cpu: '1'
+      memory:
+  actuator:
+    port: '9080'
+  initialDelay: '20'
+  period: '5'
+  timeout: '3'
+  threshold: '5'
+
+ingress:
+  host: 'project.k8s-1.sa'
+  rootPath: ''
+
+config:
+  spring:
+    profiles:
+      active: ift
+    datasource:
+      driver-class-name: org.postgresql.Driver
+      username: testweb
+      password: testweb
+      url: jdbc:mariadb://192.168.202.1:3306/testweb?currentSchema=testweb
+  springdoc:
+    swaggerUi:
+      enabled: true
+  management:
+    endpoint:
+      prometheus:
+        enabled: true
+      loggers:
+        enabled: true
+      health:
+        showDetails: 'always'
+    endpoints:
+      web:
+        exposure:
+          include: '*'

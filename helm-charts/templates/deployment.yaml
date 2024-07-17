@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Chart.Name }}
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.deployment.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: {{ .Chart.Name }}-config
+          command: [ "java" ]
+          args: ["-jar", "/app.jar"]
+          resources:
+            limits:
+              cpu: {{ .Values.deployment.resources.limits.cpu | quote }}
+              memory: {{ .Values.deployment.resources.limits.memory | quote }}
+            requests:
+              cpu: {{ .Values.deployment.resources.requests.cpu | quote }}
+              memory: {{ .Values.deployment.resources.requests.memory | quote }}
+          ports:
+          - name: main-port
+            containerPort: {{ .Values.deployment.port }}
+          - name: actuator-port
+            containerPort: {{ .Values.deployment.actuator.port }}
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: actuator-port
+            initialDelaySeconds: {{ .Values.deployment.initialDelay }}
+            periodSeconds: {{ .Values.deployment.period }}
+            timeoutSeconds: {{ .Values.deployment.timeout }}
+            failureThreshold: 5
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: actuator-port
+            initialDelaySeconds: {{ .Values.deployment.initialDelay }}
+            periodSeconds: {{ .Values.deployment.period }}
+            timeoutSeconds: {{ .Values.deployment.timeout }}
+            failureThreshold: {{ .Values.deployment.threshold }}
