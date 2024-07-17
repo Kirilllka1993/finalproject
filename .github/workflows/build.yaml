@@ -38,12 +38,12 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Publish the Helm chart
-      id: publish-chart
-      uses: kirilllka1993/finalproject@main
-      with:
-        charts_dir: "helm-charts"
-        charts_url: "https://janedoe.github.io/helm-charts"
+#    - name: Publish the Helm chart
+#      id: publish-chart
+#      uses: kirilllka1993/finalproject@main
+#      with:
+#        charts_dir: "helm-charts"
+#        charts_url: "https://janedoe.github.io/helm-charts"
 
 #    - name: Checkout helm-charts
 #      uses: actions/checkout@v2
