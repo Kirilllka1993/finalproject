@@ -47,9 +47,9 @@ jobs:
 
     - name: Publish the Helm chart
       id: publish-chart
-      uses: moikot/chart-publish-action@v1
+      uses: finalchartproject/chart-publish-action@v1
       with:
-        charts_dir: "helm-charts"
+        charts_dir: "helm-sources"
         charts_url: "https://kirilllka1993.github.io/finalchartproject"
 
     - name: Commit and push helm-charts
