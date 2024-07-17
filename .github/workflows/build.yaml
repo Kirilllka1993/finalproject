@@ -38,24 +38,24 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Checkout helm-charts
-      uses: actions/checkout@v2
-      with:
-        repository: Kirilllka1993/finalproject
-        path: helm-charts
-        token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Publish the Helm chart
-      id: publish-chart
-      uses: Kirilllka1993/finalproject@main
-      with:
-        charts_dir: "helm-charts"
-        charts_url: "https://kirilllka1993.github.io/finalchartproject"
-
-    - name: Commit and push helm-charts
-      uses: EndBug/add-and-commit@v6
-      with:
-        author_name: Kirill
-        branch: main
-        cwd: helm-charts
-        message: "Commit chart "
+#    - name: Checkout helm-charts
+#      uses: actions/checkout@v2
+#    - name: Publish Helm charts
+#      uses: Kirilllka1993/finalproject@main
+#      with:
+#        token: ${{ secrets.GITHUB_TOKEN }}
+#
+#    - name: Publish the Helm chart
+#      id: publish-chart
+#      uses: Kirilllka1993/finalproject@main
+#      with:
+#        charts_dir: "helm-charts"
+#        charts_url: "https://kirilllka1993.github.io/finalchartproject"
+#
+#    - name: Commit and push helm-charts
+#      uses: EndBug/add-and-commit@v6
+#      with:
+#        author_name: Kirill
+#        branch: main
+#        cwd: helm-charts
+#        message: "Commit chart "
