@@ -30,7 +30,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd charts
-          
           ls
           git config --global user.email "kirilllka1993@gmail.com"
           git config --global user.name "Kirill"
