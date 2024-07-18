@@ -55,4 +55,4 @@ jobs:
           git config --global user.name "Kirill"
           git add index.yaml
           git commit -m "Update chart index"
-          git push
+          git push origin helm-branch
