@@ -17,11 +17,11 @@ jobs:
       - name: Helm Repository Checkout
         uses: actions/checkout@v4
         with:
-          repository: Kirilllka1993/finalchartproject
+          repository: Kirilllka1993/finalproject
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
           persist-credentials: true
-          ref: main
+          ref: helm-branch
           path: charts
       - name: Helm Package
         run: helm package helm-charts --version "0.1.0+$(git rev-parse --short "$GITHUB_SHA")" -d charts
@@ -36,4 +36,4 @@ jobs:
           CHART_PACKAGE_NAME="testweb-0.1.0+$(git rev-parse --short "$GITHUB_SHA").tgz"
           git add "$CHART_PACKAGE_NAME"
           git commit -m "$CHART_PACKAGE_NAME"
-          git push origin main
+          git push origin helm-branch
