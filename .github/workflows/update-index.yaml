@@ -3,7 +3,7 @@ name: Update Index
 
 on:
   push:
-    branches: [ helm-branch ]
+    branches: [ "helm-branch" ]
     paths:
       - '**.tgz'
 
