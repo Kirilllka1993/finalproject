@@ -33,7 +33,7 @@ jobs:
           ls
           git config --global user.email "kirilllka1993@gmail.com"
           git config --global user.name "Kirill"
-          CHART_PACKAGE_NAME="testweb-0.1.0.tgz"
+          CHART_PACKAGE_NAME="testweb-0.1.0+$(git rev-parse --short "$GITHUB_SHA").tgz.tgz"
           git add "$CHART_PACKAGE_NAME"
           git commit -m "$CHART_PACKAGE_NAME"
           git push origin main
