@@ -13,7 +13,7 @@ deployment:
       memory: '400Mi'
     requests:
       cpu: '1'
-      memory:
+      memory: '200Mi'
   actuator:
     port: '9080'
   initialDelay: '20'
