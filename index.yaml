@@ -3,7 +3,7 @@ entries:
   testweb:
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-18T17:49:50.427781451Z"
+    created: "2024-07-19T15:49:24.476973766Z"
     description: A Helm chart for Kubernetes
     digest: 7e3a4838cc9bdb1f59d4a9af99c55fbb89ca771131a4d45840c83e41ae388ac5
     name: testweb
@@ -12,7 +12,7 @@ entries:
     version: 0.1.0+1331dec
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-18T17:49:50.428072375Z"
+    created: "2024-07-19T15:49:24.477258789Z"
     description: A Helm chart for Kubernetes
     digest: fb1472e6807207ff9de13479984653ee1dffcdc5ec27994644963871e39c6a18
     name: testweb
@@ -21,7 +21,7 @@ entries:
     version: 0.1.0+885a71c
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-18T17:49:50.428347801Z"
+    created: "2024-07-19T15:49:24.47753681Z"
     description: A Helm chart for Kubernetes
     digest: 355a842d6492d6c82be8fe990385cb86861919416fc8eea12c56805baacef7e1
     name: testweb
@@ -30,7 +30,7 @@ entries:
     version: 0.1.0+a621ad6
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-18T17:49:50.42862001Z"
+    created: "2024-07-19T15:49:24.477811514Z"
     description: A Helm chart for Kubernetes
     digest: ab0c135094061635f8f66765dbec01af8c8504b81ecde29cecdcb0cb03440631
     name: testweb
@@ -39,11 +39,20 @@ entries:
     version: 0.1.0+a90e4c1
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-18T17:49:50.428887882Z"
+    created: "2024-07-19T15:49:24.478143783Z"
     description: A Helm chart for Kubernetes
     digest: 3a1fe9e8beef05ff8b5ede90c9333b464dac4c51a8d41fac92eca5d0b6eef9b6
     name: testweb
     urls:
     - testweb-0.1.0+d47aacc.tgz
     version: 0.1.0+d47aacc
-generated: "2024-07-18T17:49:50.427350414Z"
+  - apiVersion: v2
+    appVersion: "0001"
+    created: "2024-07-19T15:49:24.478408849Z"
+    description: A Helm chart for Kubernetes
+    digest: 9a712fb7e1e98d7dfaee03940d98fa9773f0fe07883556ad621689967cd8f5a7
+    name: testweb
+    urls:
+    - testweb-0.1.0+d9fdb17.tgz
+    version: 0.1.0+d9fdb17
+generated: "2024-07-19T15:49:24.476539182Z"
