@@ -1,0 +1,12 @@
+project: default
+source:
+  repoURL: 'https://kirilllka1993.github.io/finalproject/'
+  targetRevision: 0.1.0+885a71c
+  chart: testweb
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: project
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
