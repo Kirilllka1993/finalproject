@@ -3,7 +3,7 @@ entries:
   testweb:
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-25T17:38:28.751103185Z"
+    created: "2024-07-25T17:44:46.641074769Z"
     description: A Helm chart for Kubernetes
     digest: 7e3a4838cc9bdb1f59d4a9af99c55fbb89ca771131a4d45840c83e41ae388ac5
     name: testweb
@@ -12,7 +12,7 @@ entries:
     version: 0.1.0+1331dec
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-25T17:38:28.75137587Z"
+    created: "2024-07-25T17:44:46.641357927Z"
     description: A Helm chart for Kubernetes
     digest: 2dd097dcf0417114773bd4bfd460b0bb77ad055a0e104ff22e01e0e9e731d2d0
     name: testweb
@@ -21,7 +21,7 @@ entries:
     version: 0.1.0+75ed11d
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-25T17:38:28.751653805Z"
+    created: "2024-07-25T17:44:46.641632969Z"
     description: A Helm chart for Kubernetes
     digest: fb1472e6807207ff9de13479984653ee1dffcdc5ec27994644963871e39c6a18
     name: testweb
@@ -30,7 +30,7 @@ entries:
     version: 0.1.0+885a71c
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-25T17:38:28.751913877Z"
+    created: "2024-07-25T17:44:46.641899767Z"
     description: A Helm chart for Kubernetes
     digest: f02c24a818f6f7a5517dbd6971019c99e34603bb9765bf83fbe203bc3da165da
     name: testweb
@@ -39,7 +39,16 @@ entries:
     version: 0.1.0+8fa9237
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-25T17:38:28.752171143Z"
+    created: "2024-07-25T17:44:46.642682776Z"
+    description: A Helm chart for Kubernetes
+    digest: 6379e193ab7b1748b1cc1c7439161d81444f99912338daaed5eafe6b2b8d05b6
+    name: testweb
+    urls:
+    - testweb-0.1.0+a29b4af.tgz
+    version: 0.1.0+a29b4af
+  - apiVersion: v2
+    appVersion: "0001"
+    created: "2024-07-25T17:44:46.643230916Z"
     description: A Helm chart for Kubernetes
     digest: 355a842d6492d6c82be8fe990385cb86861919416fc8eea12c56805baacef7e1
     name: testweb
@@ -48,7 +57,7 @@ entries:
     version: 0.1.0+a621ad6
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-25T17:38:28.753338372Z"
+    created: "2024-07-25T17:44:46.643558326Z"
     description: A Helm chart for Kubernetes
     digest: ab0c135094061635f8f66765dbec01af8c8504b81ecde29cecdcb0cb03440631
     name: testweb
@@ -57,7 +66,7 @@ entries:
     version: 0.1.0+a90e4c1
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-25T17:38:28.753641142Z"
+    created: "2024-07-25T17:44:46.643843457Z"
     description: A Helm chart for Kubernetes
     digest: 1d58f4e493ba7b8d4638b755635abc7d8618e5fda708c426556efc61db3bb5c4
     name: testweb
@@ -66,7 +75,7 @@ entries:
     version: 0.1.0+af8d641
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-25T17:38:28.753928354Z"
+    created: "2024-07-25T17:44:46.644107079Z"
     description: A Helm chart for Kubernetes
     digest: 67a0c219f9bc9338eed8219067f396e26ede28cb4e1c1b8a0da498fe1bd08d3e
     name: testweb
@@ -75,7 +84,7 @@ entries:
     version: 0.1.0+d1bd7a1
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-25T17:38:28.75421754Z"
+    created: "2024-07-25T17:44:46.644478862Z"
     description: A Helm chart for Kubernetes
     digest: 3a1fe9e8beef05ff8b5ede90c9333b464dac4c51a8d41fac92eca5d0b6eef9b6
     name: testweb
@@ -84,11 +93,11 @@ entries:
     version: 0.1.0+d47aacc
   - apiVersion: v2
     appVersion: "0001"
-    created: "2024-07-25T17:38:28.754638069Z"
+    created: "2024-07-25T17:44:46.644833633Z"
     description: A Helm chart for Kubernetes
     digest: 9a712fb7e1e98d7dfaee03940d98fa9773f0fe07883556ad621689967cd8f5a7
     name: testweb
     urls:
     - testweb-0.1.0+d9fdb17.tgz
     version: 0.1.0+d9fdb17
-generated: "2024-07-25T17:38:28.750690541Z"
+generated: "2024-07-25T17:44:46.640641591Z"
