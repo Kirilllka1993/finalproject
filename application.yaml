@@ -1,12 +1,26 @@
-project: default
-source:
-  repoURL: 'https://kirilllka1993.github.io/finalproject/'
-  targetRevision: 0.1.0+885a71c
-  chart: testweb
-destination:
-  server: 'https://kubernetes.default.svc'
-  namespace: project
-syncPolicy:
-  automated:
-    prune: true
-    selfHeal: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: "2024-07-18T21:21:10Z"
+  generation: 3909
+  name: finalproject
+  namespace: argocd
+  resourceVersion: "7829619"
+  uid: 25235342-6910-4634-bc93-524c08724cc3
+spec:
+  destination:
+    namespace: project
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: testweb
+    repoURL: https://kirilllka1993.github.io/finalproject/
+    targetRevision: 0.1.0+885a71c
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+status:
+  controllerNamespace: argocd
+  health:
+    status: Healthy
