@@ -28,21 +28,18 @@ jobs:
           ref: helm-branch
           path: charts
       - name: Helm Package
-        env:
-          RUN_ID: ${{ github.run_id }}
 #        run: helm package helm-charts --version "0.1.0+$(git rev-parse --short "$GITHUB_SHA")" -d charts
-        run: helm package helm-charts --version $RUN_ID -d charts
+        run: helm package helm-charts --version ${{env.RUN_ID}} -d charts
       - name: Helm Push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RUN_ID: ${{ github.run_id }}
         run: |
           cd charts
           ls
           git config --global user.email "kirilllka1993@gmail.com"
           git config --global user.name "Kirill"
 #          CHART_PACKAGE_NAME="testweb-0.1.0+$(git rev-parse --short "$GITHUB_SHA").tgz"
-          CHART_PACKAGE_NAME="testweb-"$RUN_ID").tgz"
+          CHART_PACKAGE_NAME="testweb-"${{env.RUN_ID}}").tgz"
           git add "$CHART_PACKAGE_NAME"
           git commit -m "$CHART_PACKAGE_NAME"
           git push origin helm-branch
@@ -77,7 +74,7 @@ jobs:
         run: |
           cd app
           ls
-          sed -i 's|targetRevision:.*|targetRevision: '$RUN_ID'|' application.yaml
+          sed -i 's|targetRevision:.*|targetRevision: '${{env.RUN_ID}}'|' application.yaml
           git config --global user.email "kirilllka1993@gmail.com"
           git config --global user.name "Kirill"
           git add application.yaml
