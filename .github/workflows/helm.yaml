@@ -4,6 +4,9 @@ on:
   push:
     branches: [ "main" ]
 
+env:
+  RUN_ID: ${{ github.run_id }}
+
 jobs:
   publish:
     runs-on: ubuntu-20.04
@@ -24,8 +27,6 @@ jobs:
           ref: helm-branch
           path: charts
       - name: Helm Package
-        env:
-          RUN_ID: ${{ github.run_id }}
         run: helm package helm-charts --version "${{env.RUN_ID}}" -d charts
       - name: Helm Push
         env:
