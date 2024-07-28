@@ -35,7 +35,7 @@ jobs:
       - name: Helm Push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RUN_ID: ${{ github.run_id }k}
+          RUN_ID: ${{ github.run_id }}
         run: |
           cd charts
           ls
