@@ -28,11 +28,14 @@ jobs:
           ref: helm-branch
           path: charts
       - name: Helm Package
+        env:
+          RUN_ID: ${{ github.run_id }}
 #        run: helm package helm-charts --version "0.1.0+$(git rev-parse --short "$GITHUB_SHA")" -d charts
         run: helm package helm-charts --version "$RUN_ID" -d charts
       - name: Helm Push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_ID: ${{ github.run_id }}
         run: |
           cd charts
           ls
