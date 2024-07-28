@@ -12,14 +12,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Helm Installation
         uses: azure/setup-helm@v1.1
-        env:
-          RUN_ID: ${{ github.run_id }}
         with:
           version: v3.7.0
       - name: Helm Repository Checkout
         uses: actions/checkout@v4
-        env:
-          RUN_ID: ${{ github.run_id }}
         with:
           repository: Kirilllka1993/finalproject
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -28,20 +24,16 @@ jobs:
           ref: helm-branch
           path: charts
       - name: Helm Package
-        env:
-          RUN_ID: ${{ github.run_id }}
         run: helm package helm-charts --version "0.1.0+$(git rev-parse --short "$GITHUB_SHA")" -d charts
       - name: Helm Push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RUN_ID: ${{ github.run_id }}
         run: |
           cd charts
           ls
           git config --global user.email "kirilllka1993@gmail.com"
           git config --global user.name "Kirill"
-#          CHART_PACKAGE_NAME="testweb-0.1.0+$(git rev-parse --short "$GITHUB_SHA").tgz"
-          CHART_PACKAGE_NAME="testweb-"${{env.RUN_ID}}").tgz"
+          CHART_PACKAGE_NAME="testweb-0.1.0+$(git rev-parse --short "$GITHUB_SHA").tgz"
           git add "$CHART_PACKAGE_NAME"
           git commit -m "$CHART_PACKAGE_NAME"
           git push origin helm-branch
@@ -62,23 +54,3 @@ jobs:
           git add index.yaml
           git commit -m "Update chart index"
           git push origin helm-branch
-          
-
-      - name: Git Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: main
-      - name: Helm Installation
-        uses: azure/setup-helm@v4
-        with:
-          version: v3.13.3
-      - name: Update application
-        run: |
-          cd app
-          ls
-          sed -i 's|targetRevision:.*|targetRevision: '${{env.RUN_ID}}'|' application.yaml
-          git config --global user.email "kirilllka1993@gmail.com"
-          git config --global user.name "Kirill"
-          git add application.yaml
-          git commit -m "Update application"
-          git push origin main
