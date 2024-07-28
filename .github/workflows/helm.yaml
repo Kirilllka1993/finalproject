@@ -29,7 +29,7 @@ jobs:
           path: charts
       - name: Helm Package
 #        run: helm package helm-charts --version "0.1.0+$(git rev-parse --short "$GITHUB_SHA")" -d charts
-        run: helm package helm-charts --version $RUN_ID -d charts
+        run: helm package helm-charts --version "$RUN_ID" -d charts
       - name: Helm Push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
