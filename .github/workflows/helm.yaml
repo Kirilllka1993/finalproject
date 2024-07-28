@@ -57,3 +57,18 @@ jobs:
           git add index.yaml
           git commit -m "Update chart index"
           git push origin helm-branch
+
+      - name: Git Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Update application
+        run: |
+          cd app
+          ls
+          sed -i 's|targetRevision:.*|targetRevision: '${{env.RUN_ID}}'|' application.yaml
+          git config --global user.email "kirilllka1993@gmail.com"
+          git config --global user.name "Kirill"
+          git add application.yaml
+          git commit -m "Update application"
+          git push origin main
