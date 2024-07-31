@@ -19,6 +19,17 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.deployment.pullPolicy }}
+          env:
+            - name: spring.datasource.username
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.cred.name }}
+                  key: username
+            - name: spring.datasource.password
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.cred.name }}
+                  key: password
           envFrom:
             - configMapRef:
                 name: {{ .Chart.Name }}-config

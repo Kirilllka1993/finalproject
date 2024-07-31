@@ -1,4 +1,9 @@
 namespace: project
+cred:
+  name: app-cred
+  username: dGVzdHdlYg==
+  password: dGVzdHdlYg==
+
 image:
   repository: jfrog.it-academy.by/public/kazimirov
   tag: testweb
@@ -31,8 +36,8 @@ config:
       active: ift
     datasource:
       driver-class-name: org.postgresql.Driver
-      username: testweb
-      password: testweb
+#      username: testweb
+#      password: testweb
       url: jdbc:mariadb://192.168.202.1:3306/testweb?currentSchema=testweb
   springdoc:
     swaggerUi:

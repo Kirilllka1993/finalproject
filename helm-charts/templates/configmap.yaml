@@ -10,8 +10,8 @@ data:
   -XX:+UseContainerSupport"
   #Spring application options
   spring.profiles.active: {{ .Values.config.spring.profiles.active }}
-  spring.datasource.username: {{ .Values.config.spring.datasource.username }}
-  spring.datasource.password: {{ .Values.config.spring.datasource.password }}
+#  spring.datasource.username: {{ .Values.config.spring.datasource.username }}
+#  spring.datasource.password: {{ .Values.config.spring.datasource.password }}
   spring.datasource.url: "{{ .Values.config.spring.datasource.url }}"
 
   springdoc.swagger-ui.enabled: "{{ .Values.config.springdoc.swaggerUi.enabled }}"
