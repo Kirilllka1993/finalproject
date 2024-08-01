@@ -40,10 +40,6 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-  job2:
-    needs: job1
-    runs-on: ubuntu-20.04
-    steps:
       - name: Git Checkout
         uses: actions/checkout@v4
         with:
@@ -57,7 +53,12 @@ jobs:
           git config --global user.name "Kirill"
           git add values.yaml
           git commit -m "Update tag in values"
-          git push origin main
+          git push origin main          
+
+  job2:
+    needs: job1
+    runs-on: ubuntu-20.04
+    steps:
       - name: Chart Checkout
         uses: actions/checkout@v2
       - name: Helm Installation
