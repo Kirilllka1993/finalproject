@@ -99,7 +99,7 @@ jobs:
         run: |
           cd app
           ls
-          sed -i 's|targetRevision:.*|targetRevision: '1.0.0+${{env.TAG}}-${{env.RUN_ID}}'|' application.yaml
+          sed -i 's|targetRevision:.*|targetRevision: '1.0.0+${{env.TAG}}'|' application.yaml
           git config --global user.email "kirilllka1993@gmail.com"
           git config --global user.name "Kirill"
           git add application.yaml
