@@ -6,7 +6,7 @@ cred:
 
 image:
   repository: jfrog.it-academy.by/public/kazimirov
-  tag: testweb-1.1.7
+  tag: testweb-1.1.8
   pullPolicy: IfNotPresent
 deployment:
   replicas: 1
