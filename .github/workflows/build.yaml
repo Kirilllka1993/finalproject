@@ -34,7 +34,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: public/kazimirov
-          tags: ${{env.RUN_ID}}
+          tags: ${{env.TAG}}
           registry: jfrog.it-academy.by
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
