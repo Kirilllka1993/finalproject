@@ -11,7 +11,7 @@ spec:
   source:
     chart: testweb
     repoURL: https://kirilllka1993.github.io/finalproject/
-    targetRevision: 1.0.0+testweb2-10202032107
+    targetRevision: 1.0.0+testweb-1.1.1-10202149206
   syncPolicy:
     automated:
       prune: true
