@@ -60,7 +60,7 @@ jobs:
           ref: helm-branch
           path: charts
       - name: Helm Package
-        run: helm package helm-charts --version "1.0.0+${{env.TAG}}-${{env.RUN_ID}}" -d charts
+        run: helm package helm-charts --version "1.0.0+${{env.TAG}}" -d charts
       - name: Helm Push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -69,7 +69,7 @@ jobs:
           ls
           git config --global user.email "kirilllka1993@gmail.com"
           git config --global user.name "Kirill"
-          CHART_PACKAGE_NAME="testweb-1.0.0+${{env.TAG}}-${{env.RUN_ID}}.tgz"
+          CHART_PACKAGE_NAME="testweb-1.0.0+${{env.TAG}}.tgz"
           git add "$CHART_PACKAGE_NAME"
           git commit -m "$CHART_PACKAGE_NAME"
           git push origin helm-branch
