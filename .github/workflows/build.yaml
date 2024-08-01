@@ -14,7 +14,7 @@ on:
 
 env:
   RUN_ID: ${{ github.run_id }}
-  TAG: testweb2
+  TAG: testweb-1.1.1
 
 jobs:
   job1:
@@ -34,7 +34,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: public/kazimirov
-          tags: ${{env.TAG}}-${{env.RUN_ID}}
+          tags: ${{env.TAG}}
           registry: jfrog.it-academy.by
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
