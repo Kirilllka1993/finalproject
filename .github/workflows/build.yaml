@@ -14,7 +14,7 @@ on:
 
 env:
   RUN_ID: ${{ github.run_id }}
-  TAG: testweb-1.1.11
+  TAG: testweb-1.1.12
 
 jobs:
   job1:
